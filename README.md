@@ -4,3 +4,5 @@
     1. Bird Occurrences - GBIF | Global Biodiversity Information Facility: https://www.gbif.org/ 
     2. State Boundaries - Natural Earth / geojson.xyz
     3. NHD Streams - https://gis.utah.gov/data/water/lakes-rivers-dams/
+
+The data was explored, wrangled and test mapped in Pandas, GeoPandas and QGIS a bit.
