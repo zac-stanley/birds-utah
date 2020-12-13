@@ -11,13 +11,15 @@ The map itself displays bird occurrences/observations in 2019. Each classified (
 
     1. Wilson's Warbler - mean observed species
 #Five above the mean from largest to smallest:
-        1. Bewick's Wren
-        2. Vesper Sparrow
+        
+    1. Bewick's Wren
+    2. Vesper Sparrow
     3. Loggerheaded Shrike
     4. Canyon Wren
     5. Northen Pintail
     
    #Five below the mean from largest to smallest
+   
     1. Clarks Nutcracker
     2. Savannah Sparrow
     3. Great Horned Owl
