@@ -21,7 +21,7 @@ The map itself displays bird occurrences/observations in 2019. Each classified (
     4. Canyon Wren
     5. Northen Pintail
     
- **Five below the mean from largest to smallest**
+ **Five below the mean from largest to smallest:**
    
     1. Clarks Nutcracker
     2. Savannah Sparrow
