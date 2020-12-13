@@ -29,4 +29,6 @@ The map itself displays bird occurrences/observations in 2019. Each classified (
     4. Juniper Titmouse
     5. MacGillivary's Warbler
     
-There are two notebooks 
+There are two notebooks used for data wrangling and analysis. The first one **bird_occurrences_utah_clean.ipynb** describes the process of cleaning the data downloaded from GBIF with Pandas. Importing the raw CSV, dropping unneeded columns (INSERT cell in notebook describing QGIS process of summarizing of data) and exporting to to geojson.
+
+The second notebook describes a relatively simple analysis where in GeoPandas major streams as classified by the state of Utah are buffered to 300 feet (recommended minimum for avian riparian habitat), dissolved to a single polygon and then used to clip the bird observations. These observations are written to a geojson for use in the resultant interactive map.
