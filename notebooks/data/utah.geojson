@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "scalerank": 2, "adm1_code": "USA-3526", "diss_me": 3526, "adm1_cod_1": "USA-3526", "iso_3166_2": "US-UT", "wikipedia": "http:\/\/en.wikipedia.org\/wiki\/Utah", "sr_sov_a3": "US1", "sr_adm0_a3": "USA", "iso_a2": "US", "adm0_sr": 1, "admin0_lab": 2, "name": "Utah", "name_alt": "UT", "name_local": null, "type": "State", "type_en": "State", "code_local": "US49", "code_hasc": "US.UT", "note": null, "hasc_maybe": null, "region": "West", "region_cod": null, "region_big": "Mountain", "big_code": null, "provnum_ne": 0, "gadm_level": 1, "check_me": 0, "scaleran_1": 2, "datarank": 1, "abbrev": "Utah", "postal": "UT", "area_sqkm": 0, "sameascity": -99, "labelrank": 0, "featurec_1": "Admin-1 scale rank", "admin": "United States of America", "name_len": 4, "mapcolor9": 1, "mapcolor13": 1, "featureclass": "Admin-1 scale rank" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -109.053182949645461, 41.001993720049384 ], [ -109.045224779072527, 36.999912421205238 ], [ -110.49622148317988, 37.007327989239137 ], [ -112.417602912224041, 37.009420884746952 ], [ -114.030527716917987, 36.994098822572425 ], [ -114.034222581826839, 41.993121853191376 ], [ -111.050244513781053, 42.00159678808722 ], [ -111.054481981228989, 41.027935289059904 ], [ -109.053182949645461, 41.001993720049384 ] ] ] } }
+]
+}
