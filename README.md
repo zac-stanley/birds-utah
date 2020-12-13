@@ -7,7 +7,7 @@
 
 The data was explored, wrangled and test mapped in Pandas and GeoPandas. ##UPDATE THIS SECTION ON HOW TO USE THE NOTEBOOK
 
-The map itself displays bird occurrences/observations in 2019. Each classified (colored) point represents a sigle observation of 1 of 11 sampled species. The species were selected based on the follwing criteria. The mean number numbers of observations in the unclipped dataset and the five species most common above the mean and the five most common below the mean. 
+The map itself displays bird occurrences/observations in 2019. Each classified (colored) point represents a sigle observation of 1 of 11 sampled species. The species were selected based on the following criteria. The mean number numbers of observations and the five species most common above the mean and the five most common below the mean. 
 
 
  
@@ -29,3 +29,4 @@ The map itself displays bird occurrences/observations in 2019. Each classified (
     4. Juniper Titmouse
     5. MacGillivary's Warbler
     
+There are two notebooks 
