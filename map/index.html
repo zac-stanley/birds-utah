@@ -199,7 +199,14 @@
   }
 
   // create leaflet map in our div container with an idd of 'map'
-  const map = L.map('map', options);
+	const map = L.map('map', options);
+	
+	L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		subdomains: 'abcd',
+		minZoom: 0,
+		maxZoom: 18,
+		ext: 'png'}).addTo(map);
 
   // set map styles
   const styles = {
@@ -241,10 +248,10 @@
         },
         style: function (feature) {
           return {
-            color: 'false',
+            color: 'black',
 						fillColor: '#8dd3c7',
 						radius: 5,
-						fillOpacity:.7
+						fillOpacity:.4
           }
         },
         onEachFeature: function (feature, layer) {
@@ -278,10 +285,10 @@
         },
         style: function (feature) {
           return {
-            color: 'false',
+            color: 'black',
 						fillColor: '#8dd3c7',
 						radius: 5,
-						fillOpacity: .7
+						fillOpacity: .4
           }
         },
         onEachFeature: function (feature, layer) {
@@ -315,10 +322,10 @@
 					},
 					style: function (feature) {
 						return {
-							color: 'false',
+							color: 'black',
 						fillColor: '#bebada',
 						radius: 4.5,
-						fillOpacity: .6
+						fillOpacity: .4
 						}
 					},
 					onEachFeature: function (feature, layer) {
@@ -352,10 +359,10 @@
 					},
 					style: function (feature) {
 						return {
-							color: 'false',
+							color: 'black',
 							fillColor: '#fb8072',
 							radius: 4.5,
-							fillOpacity: .6
+							fillOpacity: .4
 						}
 					},
 					onEachFeature: function (feature, layer) {
@@ -389,10 +396,10 @@
 					},
 					style: function (feature) {
 						return {
-							color: 'false',
+							color: 'black',
 							fillColor: '#80b1d3',
 							radius: 4.5,
-							fillOpacity: .6
+							fillOpacity: .4
 						}
 					},
 					onEachFeature: function (feature, layer) {
@@ -426,10 +433,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#fdb462',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
@@ -463,10 +470,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#b3de69',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
@@ -501,10 +508,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#fccde5',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
@@ -538,10 +545,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#d9d9d9',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
@@ -575,10 +582,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#bc80bd',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
@@ -612,10 +619,10 @@
 						},
 						style: function (feature) {
 							return {
-								color: 'false',
+								color: 'black',
 								fillColor: '#ccebc5',
 								radius: 4.5,
-								fillOpacity: .6
+								fillOpacity: .4
 							}
 						},
 						onEachFeature: function (feature, layer) {
