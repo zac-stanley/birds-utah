@@ -449,9 +449,9 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
 
