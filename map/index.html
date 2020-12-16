@@ -5,8 +5,7 @@
 	<meta charset=utf-8 />
 	<title>Birds in Riparian Corridors of Utah - 2019</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
-
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
@@ -187,8 +186,8 @@
 	</section>
 
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-	<script src="../notebooks/data/sw_birds.js"></script>
-	<script src="../notebooks/data/utah.js"></script>
+	<script src="./data/birds_stream_names_4326.js"></script>
+	<script src="./data/utah.js"></script>
 	<script>
 
   // set map options
@@ -200,6 +199,9 @@
 
   // create leaflet map in our div container with an idd of 'map'
 	const map = L.map('map', options);
+	
+
+
 	
 	L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
 		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -267,9 +269,9 @@
           });
   
         props = feature.properties
-       	popup = makePopup(props.locality, props.month, props.day)
+       	popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
   
-          layer.bindTooltip(popup)
+          layer.bindPopup(popup)
         }
 			}).addTo(map);
 
@@ -304,9 +306,9 @@
           });
   
         props = feature.properties
-       	popup = makePopup(props.locality, props.month, props.day)
+       	popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
   
-          layer.bindTooltip(popup)
+          layer.bindPopup(popup)
         }
 			}).addTo(map);
 
@@ -341,9 +343,9 @@
 						});
 		
 					props = feature.properties
-					 popup = makePopup(props.locality, props.month, props.day)
+					 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 		
-						layer.bindTooltip(popup)
+						layer.bindPopup(popup)
 					}
 				}).addTo(map);
 
@@ -378,9 +380,9 @@
 						});
 		
 					props = feature.properties
-					 popup = makePopup(props.locality, props.month, props.day)
+					 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 		
-						layer.bindTooltip(popup)
+						layer.bindPopup(popup)
 					}
 				}).addTo(map);
 
@@ -415,9 +417,9 @@
 						});
 		
 					props = feature.properties
-					 popup = makePopup(props.locality, props.month, props.day)
+					 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 		
-						layer.bindTooltip(popup)
+						layer.bindPopup(popup)
 					}
 				}).addTo(map);
 
@@ -489,9 +491,9 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
 
@@ -527,9 +529,9 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
 
@@ -564,9 +566,9 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
 
@@ -601,9 +603,9 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
 
@@ -638,37 +640,95 @@
 							});
 			
 						props = feature.properties
-						 popup = makePopup(props.locality, props.month, props.day)
+						 popup = makePopup(props.vernacularName, props.locality, props.GNIS_Name, props.month, props.day)
 			
-							layer.bindTooltip(popup)
+							layer.bindPopup(popup)
 						}
 					}).addTo(map);
+
+						// when clicking on a stop point map zooms to and centers on that point
+						warb.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						bwicks.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						vesper.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						shrike.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
 			
+						
+						cwren.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						pintail.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						clarks.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+						
+						ssparrow.on("click", function(e){
+							map.setView(e.latlng, 13)
+					});
+
+					
+					ghowl.on("click", function(e){
+						map.setView(e.latlng, 13)
+					});
+
+					
+					jtit.on("click", function(e){
+						map.setView(e.latlng, 13)
+					});
+
+					
+					mwarb.on("click", function(e){
+						map.setView(e.latlng, 13)
+					});
+
 			
 			// style control layer
 		const sourceLayers = {
-			"<b style= 'color:#8dd3c7'>Wilson's Warbler</b>": warb,
+			
 			"<b style= 'color:#ffffb3'>Bewick's Wren</b>": bwicks,
-			"<b style= 'color:#bebada'>Vesper Sparrow</b>": vesper,
-			"<b style= 'color:#fb8072'>Loggerhead Shrike</b>": shrike,
 			"<b style= 'color:#80b1d3'>Canyon Wren</b>": cwren,
-			"<b style= 'color:#fdb462'>Northern Pintail</b>": pintail,
 			"<b style= 'color:#b3de69'>Clark's Nutcracker</b>": clarks,
-			"<b style= 'color:#fccde5'>Savannah Sparrow</b>": ssparrow,
 			"<b style= 'color:#d9d9d9'>Great Horned Owl</b>": ghowl,
 			"<b style= 'color:#bc80bd'>Juniper Titmouse</b>": jtit,
+			"<b style= 'color:#fb8072'>Loggerhead Shrike</b>": shrike,
 			"<b style= 'color:#ccebc5'>MacGillivary's Warbler</b>": mwarb,
+			"<b style= 'color:#fdb462'>Northern Pintail</b>": pintail,
+			"<b style= 'color:#fccde5'>Savannah Sparrow</b>": ssparrow,
+			"<b style= 'color:#bebada'>Vesper Sparrow</b>": vesper,
+			"<b style= 'color:#8dd3c7'>Wilson's Warbler</b>": warb
 
 		}
 		// create control layer
 		L.control.layers(null, sourceLayers, { collapsed: false }).addTo(map);
 
 
-		function makePopup(locality, month, day) {
+		function makePopup(vernacularName, locality, GNIS_Name, month, day) {
 				// create template literal for tooltip  
-				return `<h4>${locality}</h4>
-				<b>Month:</b> ${month}<br>
-				<b>Day:</b> ${day}<br>`
+				return `<h4>${vernacularName}</h4>
+				<b>Site Name:</b> ${locality}<br>
+				<b>Stream Name:</b> ${GNIS_Name}<br>
+				<b>Date observed:</b> ${month} ${day}<br>`
+				
 			
 		}
 
