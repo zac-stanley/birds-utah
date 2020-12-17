@@ -203,12 +203,16 @@
 
 
 	
-	L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		subdomains: 'abcd',
-		minZoom: 0,
+	// L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
+	// 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	// 	subdomains: 'abcd',
+	// 	minZoom: 0,
+	// 	maxZoom: 18,
+	// 	ext: 'png'}).addTo(map);
+
+	 L.tileLayer('https://api.mapbox.com/styles/v1/zacstanley/ckiquscaj1y6517qqbx11r945/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiemFjc3RhbmxleSIsImEiOiJCS20zaVR3In0._oaGhAVLz04gbE3M2HKHGA', {
 		maxZoom: 18,
-		ext: 'png'}).addTo(map);
+		}).addTo(map);
 
   // set map styles
   const styles = {
@@ -638,7 +642,7 @@
 
 						// when clicking on a stop point map zooms to and centers on that point
 						warb.on("click", function(e){
-							map.setView(e.latlng, 13)
+							map.setView(e.latlng, 20)
 					});
 
 						
