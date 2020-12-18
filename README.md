@@ -17,6 +17,9 @@ Next the NHD streams data is inspected for crs and plotted. It's apparent that w
 
 Finally, we read in the csv created in notebook **bird_occurrences_utah_clean.ipynb**. The data isn't interpreting the geometry column correctly. So we need to convert our lat/lon columns to integer and use the gpd_pointsfrom_xy() method to make sure the coumns are being read correctly. The birds are then plotted for visual inspection and finally written to a geoJSON file.
 
+### bird_occurrences_utah_explore_reproject_buffer_intersect.ipynb
+This notebook handles the first piece of spatial analysis we will be doing. Selecting bidFor the analysis to be useful we re-project our birdobservation and streams data into crs's that minimize horizontal distortion - USA Contiguous Equidistant. W
+
 ### Map Description
 The map itself displays bird occurrences/observations in 2019. Each classified (colored) point represents a sigle observation of 1 of 11 sampled species. The species were selected based on the following criteria. The mean number numbers of observations and the five species most common above the mean and the five most common below the mean. 
  
