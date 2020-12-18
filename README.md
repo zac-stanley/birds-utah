@@ -1,14 +1,9 @@
 ## Map of bird observation/occurrences along riparian corridors in the state of Utah in 2019
 **Data for the map is from three sources**
 
-    1. [https://www.gbif.org/] [Bird Occurrences - GBIF | Global Biodiversity Information Facility]
+    1. https://www.gbif.org/ "Bird Occurrences - GBIF | Global Biodiversity Information Facility"
     2. State Boundaries - Natural Earth / geojson.xyz
     3. NHD Streams - https://gis.utah.gov/data/water/lakes-rivers-dams/
-    4. Some text with [a link][1] and
-another [link][2].
-
-[1]: https://www.gbif.org/ "Bird Occurrences - GBIF | Global Biodiversity Information Facility"
-[2]: http://example.org/ "Title"
 
 The data was explored, wrangled and test mapped in Pandas and GeoPandas. ##UPDATE THIS SECTION ON HOW TO USE THE NOTEBOOK
 
