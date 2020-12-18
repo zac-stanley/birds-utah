@@ -142,7 +142,7 @@
 
 	<section id="about">
 		<h2>Bird Sightings | Utah 2019</h2>
-			<p>This map displays bird observations in 2019 along riparian corridors in the state of Utah. The data were acquired through <a href="https://www.gbif.org/">GBIF | Global Biodiversity Information Facility</a> and are the result of community science based observations made using <a href="https://ebird.org/home">eBird</a>. Each colored point represents an observation one or more species at a single location. There are 11 sampled species shown on the map. They were selected based on the following criteria: The one species with mean number of observations and the five species most common above the mean and the five most common below the mean. <h3>To use the map:</h3><p>Click on any bird icon and the map will zoom and center on that location. A corresponding popup window will open showing a popup with common name, riparian corridor on which it was seen, day/month observed and a drawing of the species by <a href="https://www.sibleyguides.com/">David Allen Sibley</a> from the <a href="https://www.audubon.org/bird-guide">Audubon Guide to North American Birds</a> </p>
+			<p>This map displays bird observations in 2019 along riparian corridors in the state of Utah. The data were acquired through <a href="https://www.gbif.org/">GBIF | Global Biodiversity Information Facility</a> and are the result of community science based observations made using <a href="https://ebird.org/home">eBird</a>. Each colored point represents an observation one or more species at a single location. There are 11 sampled species shown on the map. They were selected based on the following criteria: The one species with mean number of observations and the five species most common above the mean and the five most common below the mean. <h3>To use the map:</h3><p>Hover on any point to see species name, click the point and the map will zoom and center on that location. A corresponding popup window will open showing the with common name, riparian corridor on which it was seen, day/month observed and a drawing of the species by <a href="https://www.sibleyguides.com/">David Allen Sibley</a> from the <a href="https://www.audubon.org/bird-guide">Audubon Guide to North American Birds.</a> Click the home button on the zoom control to return to original map extent.</p>
 			<p>Map authored by me, <a href="https://zac-stanley.github.io/">Zac Stanley</a></p>
 	</section>
 
@@ -150,7 +150,7 @@
 </body>
 
 	<header>
-		<!--	<h1>Birds in Riparian Corridors of Utah - 2019</h1> -->
+		<!--<h1>Birds in Riparian Corridors of Utah - 2019</h1>-->
 	</header>
 	<section>
 		<div class="row">
@@ -179,9 +179,9 @@
 
 			// set map options
 			const options = {
-				center: [39.419220, -111.950684],
+				center: [39.519220, -111.550684],
 				zoomSnap: .11,
-				zoom: 6.7,
+				zoom: 7.3,
 				zoomControl: false
 			}
 
@@ -189,11 +189,14 @@
 			const map = L.map('map', options);
 
 			
-			L.tileLayer('https://api.mapbox.com/styles/v1/zacstanley/ckiquscaj1y6517qqbx11r945/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiemFjc3RhbmxleSIsImEiOiJCS20zaVR3In0._oaGhAVLz04gbE3M2HKHGA', {
+			L.tileLayer('https://api.mapbox.com/styles/v1/zacstanley/ckiujashp21xl19phyad8vjfv/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiemFjc3RhbmxleSIsImEiOiJCS20zaVR3In0._oaGhAVLz04gbE3M2HKHGA', {
 				maxZoom: 18,
 			}).addTo(map);
 
-			
+			// add zoom home button
+			var zoomHome = L.Control.zoomHome({position: 'topright'});
+			zoomHome.addTo(map);
+
 			// set map styles
 			const styles = {
 				weight: 1,
@@ -220,7 +223,7 @@
 			map.fitBounds(utahZoomEx, {
 				maxzoom: 8
 			})
-			utah.addTo(map)
+			 utah.addTo(map)
 
 			//  add Wilson's Warbler
 			const warb = L.geoJson(birds, {
@@ -261,6 +264,9 @@
 
 					// create variable for feature properties used in popup
 					props = feature.properties
+
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
 
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
@@ -310,6 +316,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -356,6 +365,9 @@
 
 					// create variable for feature properties used in popup
 					props = feature.properties
+
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
 
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
@@ -404,6 +416,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -450,6 +465,9 @@
 
 					// create variable for feature properties used in popup
 					props = feature.properties
+
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
 
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
@@ -499,6 +517,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -546,6 +567,9 @@
 
 					// create variable for feature properties used in popup
 					props = feature.properties
+
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
 
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
@@ -595,6 +619,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -642,6 +669,9 @@
 
 					// create variable for feature properties used in popup
 					props = feature.properties
+
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
 
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
@@ -691,6 +721,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -739,6 +772,9 @@
 					// create variable for feature properties used in popup
 					props = feature.properties
 
+					// create simple non-formatted tooltip
+					layer.bindTooltip(`<b><p>${props.vernacularName}</b></p>Click to learn more</p>`)
+
 					// create popup with image
 					layer.bindPopup(`<h4>${props.vernacularName}</h4>
 			 		<p><b>Site Name:</b> ${props.locality}<br>
@@ -749,48 +785,49 @@
 			}).addTo(map);
 
 			// when clicking on a occurrence point map zooms to and centers on that point
+			// There has to be a more efficient way to  refactor this code - I tried  a few things with no sucess
 			bwicks.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			cwren.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			clarks.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			ghowl.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			jtit.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			mwarb.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			pintail.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			shrike.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			ssparrow.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			vesper.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			warb.on("click", function (e) {
-				map.setView(e.latlng, 18)
+				map.setView(e.latlng, 16)
 			});
 
 			// style control layer
@@ -810,7 +847,7 @@
 
 			}
 			// create control layer
-			L.control.layers(null, sourceLayers, { collapsed: false }).addTo(map);
+			L.control.layers(null, sourceLayers, { collapsed: false, position: 'bottomright' }).addTo(map);
 
 		</script>
 	</body>
