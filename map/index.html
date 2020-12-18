@@ -168,7 +168,7 @@
 		const clarkspic = './Images/clarks.jpg'
 		const ghowlpic = './Images/greathorned.jpg'
 		const jtitpic = './Images/junipertitmouse.jpg'
-		const mwarbpic = './Images/mwarb.jpg'
+		const mwarbpic = './Images/macwarb.jpg'
 		const pintailpic = './Images/pintail.jpg'
 		const shrikepic = './Images/shrike.jpg'
 		const ssparrowpic = './Images/ssparrow.jpg'
@@ -468,254 +468,293 @@
 
 		}).addTo(map);
 
-		// // 	//  add Northen Pintail
-		// const pintail = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Northern Pintail") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#fdb462',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#fdb462'
-		// 			});
-		// 		});
+		//  add Northen Pintail
+		const pintail = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "Northern Pintail") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#fdbf6f',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#fdbf6f',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${pintailpic}'/>`, { maxWidth: 'auto' })
-		// 	}
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${pintailpic}'/>`, { maxWidth: 'auto' })
+			}
 
-		// }).addTo(map);
+		}).addTo(map);
 
-		// //  add Clark's Nutcracker
-		// const clarks = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Clark's Nutcracker") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#b3de69',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#b3de69'
-		// 			});
-		// 		});
+		//  add Clark's Nutcracker
+		const clarks = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "Clark's Nutcracker") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#e31a1c',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#e31a1c',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${clarkspic}'/>`, { maxWidth: 'auto' })
-		// 	}
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${clarkspic}'/>`, { maxWidth: 'auto' })
+			}
 
-		// }).addTo(map);
+		}).addTo(map);
 
+		//  add Savannah Sparrow
+		const ssparrow = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "Savannah Sparrow") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#ff7f00',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#ff7f00',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// // 	//  add Savannah Sparrow
-		// const ssparrow = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Savannah Sparrow") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#fccde5',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#fccde5'
-		// 			});
-		// 		});
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${ssparrowpic}'/>`, { maxWidth: 'auto' })
+			}
 
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
+		}).addTo(map);
 
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${ssparrowpic}'/>`, { maxWidth: 'auto' })
-		// 	}
+		//  Great Horned Owl
+		const ghowl = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "Great Horned Owl") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#cab2d6',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#cab2d6',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
-		// }).addTo(map);
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// //  Great Horned Owl
-		// const ghowl = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Great Horned Owl") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#d9d9d9',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#d9d9d9'
-		// 			});
-		// 		});
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${ghowlpic}'/>`, { maxWidth: 'auto' })
+			}
 
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
+		}).addTo(map);
 
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${ghowlpic}'/>`, { maxWidth: 'auto' })
-		// 	}
+		//  Juniper Titmouse
+		const jtit = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "Juniper Titmouse") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#6a3d9a',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#6a3d9a',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
-		// }).addTo(map);
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// //  Juniper Titmouse
-		// const jtit = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Juniper Titmouse") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#bc80bd',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#bc80bd'
-		// 			});
-		// 		});
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${jtitpic}'/>`, { maxWidth: 'auto' })
+			}
 
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
+		}).addTo(map);
 
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${jtitpic}'/>`, { maxWidth: 'auto' })
-		// 	}
+		//  Macgillivary's Warbler
+		const mwarb = L.geoJson(birds, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, styles);
+			},
+			filter: function (feature) {
+				if (feature.properties.vernacularName == "MacGillivray's Warbler") {
+					return feature;
+				}
+			},
+			style: function (feature) {
+				return {
+					color: 'black',
+					weight: .5,
+					fillColor: '#ffff99',
+					fillOpacity: .9,
+					radius: 6
+				}
+			},
+			onEachFeature: function (feature, layer) {
+				layer.on('mouseover', function () {
+					layer.setStyle({
+						fillColor: 'grey',
+						radius: 8
+					});
+				});
+				layer.on('mouseout', function () {
+					layer.setStyle({
+					color: 'black',
+					weight: .5,
+					fillColor: '#ffff99',
+					fillOpacity: .9,
+					radius: 6
+					});
+				});
 
-		// }).addTo(map);
+				// create variable for feature properties used in popup
+				props = feature.properties
 
-		// //  Macgillivary's Warbler
-		// const mwarb = L.geoJson(birds, {
-		// 	pointToLayer: function (feature, latlng) {
-		// 		return L.circleMarker(latlng, styles);
-		// 	},
-		// 	filter: function (feature) {
-		// 		if (feature.properties.vernacularName == "Macgillivary's Warbler") {
-		// 			return feature;
-		// 		}
-		// 	},
-		// 	style: function (feature) {
-		// 		return {
-		// 			color: 'black',
-		// 			fillColor: '#ccebc5',
-		// 			radius: 6
-		// 		}
-		// 	},
-		// 	onEachFeature: function (feature, layer) {
-		// 		layer.on('mouseover', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#99611D'
-		// 			});
-		// 		});
-		// 		layer.on('mouseout', function () {
-		// 			layer.setStyle({
-		// 				fillColor: '#ccebc5'
-		// 			});
-		// 		});
+				// create popup with image
+				layer.bindPopup(`<h4>${props.vernacularName}</h4>
+			 		<p><b>Site Name:</b> ${props.locality}<br>
+			 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
+			 		<b>Date observed:</b> ${props.month} ${props.day}</p><br><img src ='${mwarbpic}'/>`, { maxWidth: 'auto' })
+			}
 
-
-		// 		// create variable for feature properties used in popup
-		// 		props = feature.properties
-
-		// 		// create popup with image
-		// 		layer.bindPopup(`<h4>${props.vernacularName}</h4>
-		// 	 		<b>Site Name:</b> ${props.locality}<br>
-		// 	 		<b>Stream Name:</b> ${props.GNIS_Name}<br>
-		// 	 		<b>Date observed:</b> ${props.month} ${props.day}<br><img src ='${jtitpic}'/>`, { maxWidth: 'auto' })
-		// 	}
-
-		// }).addTo(map);
+		}).addTo(map);
 
 		// when clicking on a occurrence point map zooms to and centers on that point
 		bwicks.on("click", function (e) {
@@ -726,33 +765,33 @@
 			map.setView(e.latlng, 18)
 		});
 
-		// clarks.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		clarks.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
-		// ghowl.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		ghowl.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
-		// jtit.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		jtit.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
-		// mwarb.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		mwarb.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
-		// pintail.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		pintail.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
 		shrike.on("click", function (e) {
 			map.setView(e.latlng, 18)
 		});
 
-		// ssparrow.on("click", function (e) {
-		// 	map.setView(e.latlng, 18)
-		// });
+		ssparrow.on("click", function (e) {
+			map.setView(e.latlng, 18)
+		});
 
 		vesper.on("click", function (e) {
 			map.setView(e.latlng, 18)
@@ -767,29 +806,19 @@
 
 		 	"<b style= 'color:#1f78b4'>Bewick's Wren</b>": bwicks,
 		 	"<b style= 'color:#fb9a99'>Canyon Wren</b>": cwren,
-		// 	"<b style= 'color:#b3de69'>Clark's Nutcracker</b>": clarks,
-		// 	"<b style= 'color:#d9d9d9'>Great Horned Owl</b>": ghowl,
-		// 	"<b style= 'color:#bc80bd'>Juniper Titmouse</b>": jtit,
-		// 	"<b style= 'color:#ccebc5'>MacGillivary's Warbler</b>": mwarb,
-		// 	"<b style= 'color:#fdb462'>Northern Pintail</b>": pintail,
+		 	"<b style= 'color:#e31a1c'>Clark's Nutcracker</b>": clarks,
+		 	"<b style= 'color:#cab2d6'>Great Horned Owl</b>": ghowl,
+		 	"<b style= 'color:#6a3d9a'>Juniper Titmouse</b>": jtit,
+			"<b style= 'color:#ffff99'>MacGillivray's Warbler</b>": mwarb,
+		 	"<b style= 'color:#fdbf6f'>Northern Pintail</b>": pintail,
 		 	"<b style= 'color:#33a02c'>Loggerhead Shrike</b>": shrike,
-		// 	"<b style= 'color:#fccde5'>Savannah Sparrow</b>": ssparrow,
+		 	"<b style= 'color:#ff7f00'>Savannah Sparrow</b>": ssparrow,
 		 	"<b style= 'color:#b2df8a'>Vesper Sparrow</b>": vesper,
 		 	"<b style= 'color:#a6cee3'>Wilson's Warbler</b>": warb
 
 		}
 		// create control layer
 		L.control.layers(null, sourceLayers, { collapsed: false }).addTo(map);
-
-
-
-		// function makePopup(vernacularName, locality, GNIS_Name, month, day) {
-		// 		// create template literal for tooltip  
-		// 		return `<h4>${vernacularName}</h4>
-		// 		<b>Site Name:</b> ${locality}<br>
-		// 		<b>Stream Name:</b> ${GNIS_Name}<br>
-		// 		<b>Date observed:</b> ${month} ${day}<br>`
-		// }
 
 	</script>
 	</body>
