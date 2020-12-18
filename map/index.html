@@ -11,6 +11,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Michroma|Patua+One|Roboto&display=swap" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Michroma|Patua+One|Roboto&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Raleway&display=swap" rel="stylesheet">
 
 	<style>		
 		
@@ -42,6 +44,7 @@
 				}
 		
 				h2 {
+					font-family: 'Crete Round', serif;
 					display: inline-block;
 					color: #001323;
 				}
@@ -71,13 +74,13 @@
 					width: 280px;
 					padding: 0 15px;
 					/* Add styles to match Leaflet UI elements */
-					background:  #66695F;
+					background:  #ffffff;
 					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 					font-family: 'Roboto', sans-serif;
-					border: 1px solid #ddd;
+					border: 1px solid #66695F;
 					border-radius: 5px;
 					z-index: 800;
-					opacity: .8;
+					opacity: .7;
 				}
 		
 				a {
@@ -95,14 +98,15 @@
 				}
 		
 				p {
+					font-family: 'Raleway', sans-serif;
 					font-size: 1em;
 					color: #001323;
 				}
 
 				.leaflet-control-layers-expanded { 
-					background:  #66695F; 
+					background:  #ffffff; 
 					font-family: 'Roboto', sans-serif;
-					border: 1px solid #ddd;
+					border: 1px solid #66695F;
 					border-radius: 5px;
 					opacity: .7;
 				}
@@ -128,9 +132,9 @@
 	<div id='map'></div>
 
 	<section id="about">
-		<h2>Designated Bike Route</h2>
-			<p>The map includes a <a href="https://en.wikipedia.org/wiki/GeoJSON">geoJSON</a>  file of points and a line. The route is from my home to my office. It has a detour to my kids school and stop at a favorite bike shop that has delicious beer on tap.</p>
-			<p>Map authored by me, <b>Zac Stanley</b></p>
+		<h2>Bird Sightings | Utah 2019</h2>
+			<p>This map displays bird observations in 2019 along riparian corridors in the state of Utah. The data were acquired through <a href="https://www.gbif.org/">GBIF | Global Biodiversity Information Facility</a> and are the result of community science based observations made using <a href="https://ebird.org/home">eBird</a>. Each ccolored point represents an observation one or more species at a single location. There are 11 sampled species shown on the map. They were selected based on the following criteria: The species with mean number of observations and the five species most common above the mean and the five most common below the mean. <br><br><b>To use the map:</b></h2><br><p>Click on any bird icon and the map will zoom and center on that location. A corresponding popup window will open showing a popup with common name, riparian corridor on which it was seen, day/month observed and a drawing of the species by <a href="https://www.sibleyguides.com/">David Allen Sibley</a> from the <a href="https://www.audubon.org/bird-guide">Audubon Guide to North American Birds</a> </p>
+			<p>Map authored by me, <a href="https://zac-stanley.github.io/">Zac Stanley</a></p>
 	</section>
 
 </div>
@@ -170,13 +174,8 @@
 			zoom: 6.7
 		}
 
-
-
 		// create leaflet map in our div container with an idd of 'map'
 		const map = L.map('map', options);
-
-
-
 
 		// L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}{r}.{ext}', {
 		// 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -188,6 +187,10 @@
 		L.tileLayer('https://api.mapbox.com/styles/v1/zacstanley/ckiquscaj1y6517qqbx11r945/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiemFjc3RhbmxleSIsImEiOiJCS20zaVR3In0._oaGhAVLz04gbE3M2HKHGA', {
 			maxZoom: 18,
 		}).addTo(map);
+
+			// L.esri.tiledMapLayer({
+    		// url: 'https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer'
+  			// }).addTo(map);
 
 		// set map styles
 		const styles = {
