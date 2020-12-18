@@ -5,8 +5,16 @@
     2. State Boundaries - Natural Earth / geojson.xyz
     3. NHD Streams - https://gis.utah.gov/data/water/lakes-rivers-dams/
 
-The data was explored, wrangled and test mapped in Pandas and GeoPandas. ##UPDATE THIS SECTION ON HOW TO USE THE NOTEBOOK
+The data was explored, wrangled and test mapped in Pandas and GeoPandas using Jupyter Notebooks. There are four notebooks in total:
 
+### bird_occurrences_utah_clean.ipynb 
+This note goes through initial process of cleaning raw data downloaded from Global Biodiversity Information Facility. It imports python libraries matplotlib, pandas and numpy. Initially reading in the raw csv data, inspecting it removing unecessary columns and selecting a subset of species we're interested in. Finally writing a new csv file that will be manipulated further manipulated in the next notebook.
+
+### bird_occurrences_utah_explore.ipynb
+ 
+
+
+## Map Description
 The map itself displays bird occurrences/observations in 2019. Each classified (colored) point represents a sigle observation of 1 of 11 sampled species. The species were selected based on the following criteria. The mean number numbers of observations and the five species most common above the mean and the five most common below the mean. 
 
 
