@@ -5,7 +5,6 @@
 	<meta charset=utf-8 />
 	<title>Birds in Riparian Corridors of Utah - 2019</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.css">
@@ -164,7 +163,7 @@
 	<script src="./data/utah.js"></script>
 	<script>
 
-		// Add image popup variables
+			// Add image popup variables
 			const bwrenpic = './Images/bwicks.jpg'
 			const cwrenpic = './Images/cwren.jpg'
 			const clarkspic = './Images/clarks.jpg'
@@ -188,7 +187,7 @@
 			// create leaflet map in our div container with an idd of 'map'
 			const map = L.map('map', options);
 
-			
+			// add custom mapbox basemap
 			L.tileLayer('https://api.mapbox.com/styles/v1/zacstanley/ckiujashp21xl19phyad8vjfv/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiemFjc3RhbmxleSIsImEiOiJCS20zaVR3In0._oaGhAVLz04gbE3M2HKHGA', {
 				maxZoom: 18,
 			}).addTo(map);
@@ -427,7 +426,7 @@
 				}
 			}).addTo(map);
 
-			// //  add Canyon Wren
+			//  add Canyon Wren
 			const cwren = L.geoJson(birds, {
 				pointToLayer: function (feature, latlng) {
 					return L.circleMarker(latlng, styles);
@@ -733,7 +732,7 @@
 
 			}).addTo(map);
 
-			//  Macgillivary's Warbler
+			//  Macgillivray's Warbler
 			const mwarb = L.geoJson(birds, {
 				pointToLayer: function (feature, latlng) {
 					return L.circleMarker(latlng, styles);
@@ -851,6 +850,5 @@
 
 		</script>
 	</body>
-	
 	</html>
 
