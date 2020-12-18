@@ -31,7 +31,7 @@ This last notebook does a bit more tweaking to the data that will allow some nic
 
 The map **Bird Sightings | Utah 2019** uses the Leaflet JavaScript library along with CSS and HTML.
 
-The map itself displays bird occurrences/observations in 2019. Each classified (colored) point represents one or more observations of one of eleven sampled species. The species were selected based on the following criteria. The mean number numbers of observations and the five species most common above the mean and the five most common below the mean. 
+The map itself displays bird occurrences/observations in the state of Utah 2019 along major stream riparian corridors. Each classified (colored) point represents one or more observations of one of eleven sampled species. The species were selected based on the following criteria. The mean number numbers of observations and the five species most common above the mean and the five most common below the mean. 
  
 **Wilson's Warbler - mean observed species**
    
